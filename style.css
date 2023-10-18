@@ -1,16 +1,44 @@
-
-body{
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
     width: 100%;
 }
 /* create space between sections*/
 .section-p1{
-    padding: 10px 10px;
+    padding: 40px 80px;
 }
 
 .section-m1{
-    margin: 15px 10px;
+    margin: 40px 0px;
 }
 
+h1 {
+    font-size: 50px;
+    line-height: 64px;
+    color:#222 ;
+}
+
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color:#222 ;
+}
+h4{
+    font-size: 24px;
+    color:#222 ;
+}
+h6 {
+    font-weight: 700;
+    font: 12px;
+}
+p {
+    font-size: 16px;
+    color: darkblue;
+    margin:  15px 0 20px 0;
+}
 button.normal {
     font-size: 14px;
     font-weight: 600;
@@ -46,7 +74,7 @@ button.white {
  justify-content: space-between;
  padding: 20px 80px;
  background: whitesmoke;
- box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.06);
+ box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.07);
  z-index: 999;
  position: sticky;
  top: 0;
@@ -62,18 +90,20 @@ button.white {
 #navbar li {
     list-style: none;
     padding: 0 20px;
+    position: relative;
 }
 
 #navbar li a {
     text-decoration: none;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     color:black; 
-}
+    transition: 0.3s ease;
+}   
 
 #navbar li a:hover,
 #navbar li a.active{
-    color: green;
+    color:darkblue;
 }
 
 #navbar li a.active::after ,
@@ -106,20 +136,23 @@ button.white {
 }
 
 #hero h4 {
-    font-size: 50px;
+    font-size: 70px;
+    padding-bottom: 10px;
 }
 
 #hero h2 {
-    font-size: 40px;
+    font-size: 50px;
     padding-bottom: 2px;
+    color: #ffb703;
 }
 
 #hero p {
     font-size: 18px;
+    padding-bottom: 70px;
 }
 #hero h1 {
-    color:darkblue;
-    font-size: 20px;
+    color:black;
+    font-size: 30px;
 }
 
 #hero button {
@@ -276,19 +309,24 @@ button.white {
 
 #banner h4 {
     color: white;
-    font-size: 20px;
+    font-size: 35px;
+    padding-bottom: 18px;
+    padding-top: 30px;
 }
 
 #banner h2 {
     color: white;
     font-size: 50px;
-    padding: 2px 0;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 #banner h2 span {
     color: red;
 }
-
+#banner button{
+    margin-top: 40px;
+}
 #banner button:hover {
     background-color: green;
     color:white
@@ -309,20 +347,22 @@ button.white {
     height: 40vh;
     background-size: cover;
     background-position: center;
+    padding-left: 30px;
+    padding-top: 50px;
 }
 
 #sm-banner h4 {
     color: white;
     font-size: 30px;
     font-weight: 300;
-    padding-bottom: 0px;
+    margin-bottom: 5px;
 }
 
 #sm-banner h2 {
     color: white;
     font-size: 40px;
     font-weight: 800;
-    padding-bottom: 3px;
+    margin-bottom: 3px;
 }
 
 #sm-banner span {
@@ -330,6 +370,9 @@ button.white {
     font-size: 14px;
     font-weight: 500;
     padding-bottom: 15px;
+}
+#sm-banner button{
+    margin-top: 20px;
 }
 
 #sm-banner .banner-box:hover button {
@@ -350,7 +393,7 @@ button.white {
     display: flex;
     flex-direction:column;
     justify-content: content;
-    align-items: flex-start;
+    align-items: center;
     background-image: url(Img/banner/b7.jpg);
     min-width: 30%;
     height: 30vh;
@@ -372,12 +415,14 @@ button.white {
     color: white;
     font-weight: 900;
     font-size: 22px;
+    margin-top: 30px;
 }
 
 #banner3 h3 {
-    color: yellow;
+    color: black;
     font-weight: 800;
     font-size: 15px;
+    margin-top: 5px;
 }
 
 #newsletter {
@@ -505,6 +550,58 @@ footer .copyright {
     display: none;
 }
 
+#scrollToTopBtn {
+    display: none; /* Hide the button by default */
+    position: fixed; /* Fixed position to stay at the bottom right corner */
+    bottom: 30px;
+    right: 30px;
+    background-color: green; /* Button background color */
+    color: white; /* Text color */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 70%; /* Make it circular */
+    font-size: 18px;
+    opacity: 0.7; /* Semi-transparent */
+    z-index: 999; /* Place it above other elements */
+  }
+  
+#scrollToTopBtn:hover {
+    background-color:black; /* Button background color on hover */
+}
+/*ABOUT US*/
+.about-us {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.ab-container{
+    width:100%;
+    height: 200px;
+    background-color:rgb(125, 125, 177);
+    text-align: center;
+    margin-bottom: 80px;
+}
+.ab-container h1{
+    color: white;
+    padding-top: 60px;
+}
+.row{
+    display: flex;
+}
+.column{
+    flex: 50%;
+    margin-right: 20px;
+}
+.column h3 {
+    font-weight: 400;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*CONTACT US*/
+
 
 /*Media Queries */
 @media (max-width:799px) {
@@ -535,7 +632,6 @@ footer .copyright {
     margin-bottom: 25px;
   }
   #mobile {
-    display: flex;
     align-items: center;
   } 
   #mobile i{
@@ -650,7 +746,14 @@ footer .copyright {
  }
 
 }
-
+/* Show the button when the user scrolls down 20px from the top of the document */
+/* You can adjust the scroll value to your preference */
+@media screen and (min-height: 400px) {
+    #scrollToTopBtn {
+        display: block;
+    }
+}
+  
 
 /* Shop page*/
 
