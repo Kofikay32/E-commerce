@@ -116,10 +116,58 @@ button.white {
     bottom: -4px;
     left: 20px;
 }
-#mobile {
-    display: flex;
+.hamburger-menu {
+    width: 2.7rem;
+    height: 3rem;
+    z-index: 100;
+    position: relative;
+    display: none;
     align-items: center;
-} 
+    justify-content: flex-end;
+  }
+  
+  .hamburger-menu .bar {
+    position: relative;
+    width: 2.1rem;
+    height: 3px;
+    border-radius: 3px;
+    background-color: black;
+    transition: 0.5s;
+  }
+  
+  .bar:before,
+  .bar:after {
+    content: "";
+    position: absolute;
+    width: 2.1rem;
+    height: 3px;
+    border-radius: 3px;
+    background-color: green;
+    transition: 0.5s;
+  }
+  
+  .bar:before {
+    transform: translateY(-9px);
+  }
+  
+  .bar:after {
+    transform: translateY(9px);
+  }
+  
+  navbar.open .hamburger-menu .bar {
+    background-color: transparent;
+    transform: rotate(360deg);
+  }
+  
+  nav.open .hamburger-menu .bar:before {
+    transform: translateY(0) rotate(45deg);
+    background-color: black;
+  }
+  
+  nav.open .hamburger-menu .bar:after {
+    transform: translateY(0) rotate(-45deg);
+    background-color: green;
+  }
    
 /* Home page*/ 
 #hero {
@@ -724,9 +772,20 @@ input[type=text],[type=email], [type=phone], textarea {
     background-color: #45a049;
   }
 
+/*CART */
+#checkout-btn {
+    background-color: green;
+    color: white;
+    font-size: 14px;
+}
+
 
 /*Media Queries */
 @media (max-width:799px) {
+
+    .hamburger-menu {
+        display: flex;
+      }
     .section-p1{
         padding: 40px 40px;
     }
@@ -752,23 +811,6 @@ input[type=text],[type=email], [type=phone], textarea {
 
   #navbar li {
     margin-bottom: 25px;
-  }
-  #mobile {
-    align-items: center;
-  } 
-  #mobile i{
-    color:#1a1a1a;
-    font: 24px;
-    padding: 15px;
-
-  }
-  #close {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    color: #222;
-    font-size: 24px;
-    display: initial;
   }
 
   #lg-bag{
@@ -877,6 +919,3 @@ input[type=text],[type=email], [type=phone], textarea {
 }
   
 
-/* Shop page*/
-
-/* Single product*/
